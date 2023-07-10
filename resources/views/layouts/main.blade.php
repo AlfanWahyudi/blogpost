@@ -8,10 +8,8 @@
     @include('partials.head-links')
 </head>
 <body>
-    <header>
-
-    </header>
-    <main>
+    @include('partials.header')
+    <main class="container-md">
         @yield('content')
     </main>
     @yield('footer')
