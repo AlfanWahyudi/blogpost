@@ -1,5 +1,5 @@
 <header class="shadow-sm">
-    <div class="container-md py-2">
+    <div class="container py-2">
         <nav class="navbar navbar-expand-sm">
             <div class="container-fluid">
                 <a href={{ route('home') }} class="navbar-brand fw-medium">Blogpost</a>
