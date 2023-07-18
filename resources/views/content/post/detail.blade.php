@@ -1,20 +1,23 @@
 @extends('layouts.main')
 
-@section('title', $post["title"])
+@section('title', $post->title)
 
 @section('content')
     <header class="pb-3 border-bottom">
-        <h1 class="fw-bold fs-2">{{ $post["title"] }}</h1>
+        <h1 class="fw-bold fs-2">{{ $post->title }}</h1>
         <div class="d-flex align-items-center gap-3">
-            <p class="m-0">{{ $post["author"] }}</p>
-            <p class="m-0">{{ $post["upload_date"] }}</p>
-            <p class="m-0">{{ $post["read_times"] }} minutes read</p>
-            <p class="m-0">{{ $post["category"] }}</p>
+            <p class="m-0">
+                {{ $post->user->first_name }}
+                {{ $post->user->last_name }}
+            </p>
+            <p class="m-0">{{ $post->updated_at }}</p>
+            <p class="m-0">10 minutes read No Data For This In DB</p>
+            <p class="m-0">{{ $post->category->name }}</p>
             <button class="btn btn-secondary rounded-pill ms-auto">Share</button>
         </div>
     </header>
     <section id="contentArticle" class="pt-3 pb-5">
-        {!! $post["content"] !!}
+        {!! $post->content !!}
     </section>
 @endsection
 
