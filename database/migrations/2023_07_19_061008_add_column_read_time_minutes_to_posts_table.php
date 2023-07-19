@@ -12,11 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->unsignedBigInteger('user_id')->change();
-            $table->foreign('user_id')->references('id')->on('users');
-
-            $table->unsignedBigInteger('category_id')->change();
-            $table->foreign('category_id')->references('id')->on('categories');
+            $table->after('likes', function(Blueprint $table) {
+                $table->integer('read_time_minutes');
+            });
         });
     }
 
@@ -26,8 +24,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->foreignId('user_id')->change();
-            $table->foreignId('category_id')->change();
+            $table->dropColumn('read_time_minutes');
         });
     }
 };
