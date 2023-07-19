@@ -27,6 +27,6 @@
             </div>
             <button type="submit" class="btn btn-primary">Sign In</button>
         </form>
-        <p class="text-center">You don't have an account yet? <a href="#" class="text-decoration-none">Sign Up</a></p>
+        <p class="text-center">You don't have an account yet? <a href={{ route('signup') }} class="text-decoration-none">Sign Up</a></p>
     </section>
 @endsection
