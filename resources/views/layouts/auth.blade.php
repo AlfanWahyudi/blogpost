@@ -7,8 +7,8 @@
     <title>@yield('title') | Blogpost</title>
     @include('partials.head-links')
 </head>
-<body class="d-flex flex-column justify-content-center" style="height: 100vh;">
-    <main class="container d-flex justify-content-center">
+<body class="d-flex flex-column justify-content-center" style="min-height: 100vh;">
+    <main class="container d-flex justify-content-center my-4">
         @yield('content')
     </main>
     @include('partials.scripts')
