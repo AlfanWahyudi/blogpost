@@ -14,7 +14,7 @@
                 <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
                 <input type="email" id="email" name="email" class="form-control form-control-lg fs-6" placeholder="Enter your email" required>
             </div>
-            <div class="mb-4">
+            <div class="mb-3">
                 <label for="password" class="form-label">Password <span class="text-danger">*</span></label>
                 <input type="password" id="password" name="password" class="form-control form-control-lg fs-6" placeholder="·········" required>
             </div>
