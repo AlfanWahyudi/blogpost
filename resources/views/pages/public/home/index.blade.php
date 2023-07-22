@@ -26,7 +26,8 @@
                             <p class="m-0">
                                 <span class="fw-light">20 June, No Data For This</span>
                                 <span class="fw-light ms-3">10 mins read No Data For This</span>
-                                <a href="#" class="badge text-bg-primary text-decoration-none fs-6 ms-3">{{ $post->category->name }}</a>
+                                <a href="#"
+                                    class="badge text-bg-primary text-decoration-none fs-6 ms-3">{{ $post->category->name }}</a>
                             </p>
                         </div>
                         <div class="col-md-4 ps-2">

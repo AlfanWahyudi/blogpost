@@ -23,4 +23,5 @@ Route::get('/post/{slug}', [PostController::class, 'show'])->name('post.detail')
 
 //----Auth----
 Route::get('/sign-in', [LoginController::class, 'index'])->name('signin');
-Route::get('/sign-up', [RegisterController::class, 'index'])->name('signup');
+Route::get('/sign-up', [RegisterController::class, 'create'])->name('signup.create');
+Route::post('/sign-up', [RegisterController::class, 'store'])->name('signup.store');

@@ -1,2 +1,2 @@
 import './bootstrap';
-import { Tooltip, Toast, Popover } from 'bootstrap';
+import { Tooltip, Toast, Popover, Alert } from 'bootstrap';

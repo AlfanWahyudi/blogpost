@@ -29,6 +29,7 @@ $font-family-sans-serif:
 
 // 6. Optionally include any other parts as needed
 @import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/alert";
 @import "~bootstrap/scss/reboot";
 @import "~bootstrap/scss/type";
 @import "~bootstrap/scss/images";
