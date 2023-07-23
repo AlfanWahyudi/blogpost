@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\Public\HomeController;
-use App\Http\Controllers\Public\PostController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Dashboard\DashboardHomeController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,8 +20,25 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/post/{slug}', [PostController::class, 'show'])->name('post.detail');
 
+Route::middleware('guest')->group(function () {
+    Route::controller(AuthController::class)->group(function () {
+        Route::prefix('sign-in')->group(function () {
+            Route::get('/', 'login')->name('signin');
+            Route::post('/', 'authenticate')->name('signin.authenticate');
+        });
 
-//----Auth----
-Route::get('/sign-in', [LoginController::class, 'index'])->name('signin');
-Route::get('/sign-up', [RegisterController::class, 'create'])->name('signup.create');
-Route::post('/sign-up', [RegisterController::class, 'store'])->name('signup.store');
+        Route::prefix('sign-up')->group(function () {
+            Route::get('/', 'register')->name('signup.create');
+            Route::post('/', 'store')->name('signup.store');
+        });
+    });
+});
+
+
+Route::middleware('auth')->group(function () {
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+    Route::prefix('dashboard')->group(function () {
+        Route::get('/', [DashboardHomeController::class, 'index'])->name('dashboard.home');
+    });
+});

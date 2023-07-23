@@ -12,7 +12,8 @@
     <section class="container-fluid rounded-3 border shadow-sm p-5" style="max-width: 500px">
         <section>
             <h1 class="text-center mb-4 fs-3 fw-semibold">Sign In</h1>
-            <form action="" class="d-flex flex-column justify-content-center mb-5">
+            <form action="{{ route('signin.authenticate') }}" method="POST" class="d-flex flex-column justify-content-center mb-5">
+                @csrf
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
                     <input type="email" id="email" name="email" class="form-control form-control-lg fs-6"
@@ -25,8 +26,8 @@
                 </div>
                 <div class="row mb-4 px-3">
                     <div class="col form-check">
-                        <input type="checkbox" id="remember" name="remember" class="form-check-input" value="">
-                        <label class="form-check-label" for="remember">
+                        <input type="checkbox" id="remember" name="remember" class="form-check-input" value="" disabled>
+                        <label class="form-check-label disabled" for="remember">
                             Remember me
                         </label>
                     </div>
