@@ -9,6 +9,12 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
+    @error('email')
+        <div class="container-fluid alert alert-danger alert-dismissible" role="alert" style="max-width: 500px">
+            {{ $message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @enderror
     <section class="container-fluid rounded-3 border shadow-sm p-5" style="max-width: 500px">
         <section>
             <h1 class="text-center mb-4 fs-3 fw-semibold">Sign In</h1>
@@ -26,8 +32,8 @@
                 </div>
                 <div class="row mb-4 px-3">
                     <div class="col form-check">
-                        <input type="checkbox" id="remember" name="remember" class="form-check-input" value="" disabled>
-                        <label class="form-check-label disabled" for="remember">
+                        <input type="checkbox" id="remember" name="remember" class="form-check-input">
+                        <label class="form-check-label" for="remember">
                             Remember me
                         </label>
                     </div>
