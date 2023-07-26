@@ -1,49 +1,21 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
 
-use App\Http\Requests\RegisterRequest;
-use App\Models\User;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\View\View;
 
-class AuthController extends Controller
+class LoginController extends Controller
 {
     /**
-    * Display a login page.
-    */
-    public function login(): View
+     * Show the form for creating a new resource.
+     */
+    public function create(): View
     {
         return view('pages.auth.login');
-    }
-
-    /**
-    * Display a register page.
-    */
-    public function register()
-    {
-        return view('pages.auth.register');
-    }
-
-    /**
-     * Store a newly created new account in storage.
-     */
-    public function store(RegisterRequest $request): RedirectResponse
-    {
-        $request->safe()->only(['name', 'email', 'password']);
-
-        $user = new User();
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = Hash::make($request->password);
-        $user->save();
-
-        return redirect()
-            ->route('signin')
-            ->with('success', 'Yay, you have successfully created a new account. Try logging in now');
     }
 
     /**
