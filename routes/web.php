@@ -2,9 +2,9 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\Dashboard\DashboardHomeController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\Dashboard\HomeDashboardController;
+use App\Http\Controllers\Public\HomeController;
+use App\Http\Controllers\Public\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,6 +42,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
     Route::prefix('dashboard')->group(function () {
-        Route::get('/', [DashboardHomeController::class, 'index'])->name('dashboard.home');
+        Route::get('/', [HomeDashboardController::class, 'index'])->name('dashboard.home');
     });
 });
