@@ -3,16 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class PostDashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): View
     {
-        //
+        return view('dashboard.posts.index');
     }
 
     /**
@@ -50,9 +52,22 @@ class PostDashboardController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, string $slug): RedirectResponse
     {
-        //
+        //TODO: fix update post
+        $post = Post::firstWhere('slug', $slug);
+        $user = auth()->user();
+
+        if ($request->user->cannot('update', [$user, $post]))
+        {
+            abort(403);
+        }
+        // $this->authorize('update', [
+        //     $user,
+        //     $post
+        // ]);
+
+        return redirect()->route('dashboard.post.edit');
     }
 
     /**

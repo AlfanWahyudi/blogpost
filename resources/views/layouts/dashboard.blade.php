@@ -9,10 +9,17 @@
     @include('partials.head-links')
 </head>
 
-<body class="d-flex flex-column justify-content-center" style="min-height: 100vh;">
-    <main class="container d-flex flex-column align-items-center my-4">
-        @yield('content')
-    </main>
+<body class="d-flex" style="min-height: 100vh;">
+    <div class="row w-100 m-0 p-0 position-relative">
+        @include('partials.dashboard.sidebar')
+        <div class="col-10 ms-auto p-0">
+            @include('partials.dashboard.header')
+            <main class="continer-lg px-4">
+                @yield('content')
+            </main>
+            <footer></footer>
+        </div>
+    </div>
     @include('partials.scripts')
 </body>
 
