@@ -18,7 +18,7 @@ class HomeController extends Controller
 
             $posts = Post::all()->reverse();
 
-            return view('pages.public.home.index', [
+            return view('public.home.index', [
                 'posts' => $posts
             ]);
         } catch (\Throwable $th) {

@@ -17,7 +17,7 @@ class PostController extends Controller
 
             $post = Post::where('slug', '=', $slug)->firstOrFail();
 
-            return view('pages.public.post.detail', [
+            return view('public.post.detail', [
                 'post' => $post,
             ]);
 
