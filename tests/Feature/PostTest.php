@@ -24,5 +24,25 @@ class PostTest extends TestCase
 
         $response = $this->get(route('dashboard.post.index'));
         $response->assertStatus(200);
+
+        $response->assertViewHasAll([
+            'posts',
+        ]);
+    }
+
+    public function test_open_posts_page_with_empty_data(): void
+    {
+        $login = [
+            'email' => 'user2@gmail.com',
+            'password' => '123',
+            'remember' => null,
+        ];
+
+        $responseLogin = $this->post('/sign-in', $login);
+        $responseLogin->assertValid();
+
+        $response = $this->get(route('dashboard.post.index'));
+        $response->assertStatus(200);
+        $response->assertViewHas('posts');
     }
 }
