@@ -6,7 +6,15 @@
                 <a href="{{ route('dashboard.home') }}" class="nav-link active text-light" aria-current="dashboard">Dashboard</a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('dashboard.post.index') }}" class="nav-link text-light">Posts</a>
+                <span class="nav-link text-light">Posts</span>
+                <ul>
+                    <li>
+                        <a href="{{ route('dashboard.post.index') }}" class="nav-link text-light fw-light">Posts List</a>
+                    </li>
+                    <li>
+                        <a href="" class="nav-link text-light fw-light">Create</a>
+                    </li>
+                </ul>
             </li>
         </ul>
     </nav>
