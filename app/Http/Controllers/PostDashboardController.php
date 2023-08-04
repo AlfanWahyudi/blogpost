@@ -14,7 +14,13 @@ class PostDashboardController extends Controller
      */
     public function index(): View
     {
-        return view('dashboard.posts.index');
+        $posts = Post::where('user_id', auth()->user()->id)
+            ->orderByDesc('updated_at')
+            ->get();
+
+        return view('dashboard.posts.index', [
+            'posts' => $posts,
+        ]);
     }
 
     /**
