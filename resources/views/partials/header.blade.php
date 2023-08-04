@@ -30,7 +30,7 @@
                                 <div class="nav-item dropdown dropdown">
                                     <a class="nav-link dropdown-toggle pe-0" href="#" role="button"
                                         data-bs-toggle="dropdown" aria-expanded="false">
-                                        Alfan Wahyudi
+                                        {{  ucfirst(auth()->user()->name) }}
                                     </a>
                                     <ul class="dropdown-menu">
                                         <li>

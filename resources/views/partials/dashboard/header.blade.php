@@ -2,7 +2,7 @@
     <div class="dropdown py-1">
         <button class="btn btn-link text-decoration-none dropdown-toggle" type="button" data-bs-toggle="dropdown"
             aria-expanded="false">
-            Alfan Wahyudi
+            {{  ucfirst(auth()->user()->name) }}
         </button>
         <ul class="dropdown-menu">
             <li>
