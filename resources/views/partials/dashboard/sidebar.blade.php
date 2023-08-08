@@ -12,7 +12,7 @@
                         <a href="{{ route('dashboard.post.index') }}" class="nav-link text-light fw-light">Posts List</a>
                     </li>
                     <li>
-                        <a href="" class="nav-link text-light fw-light">Create</a>
+                        <a href="{{ route('dashboard.post.create') }}" class="nav-link text-light fw-light">Create</a>
                     </li>
                 </ul>
             </li>

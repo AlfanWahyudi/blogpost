@@ -10,7 +10,11 @@ export default defineConfig({
     },
     plugins: [
         laravel({
-            input: ['resources/sass/style.scss', 'resources/js/app.js'],
+            input: [
+                'resources/sass/style.scss',
+                'resources/js/app.js',
+                'resources/js/pages/page-post-dashboard-create.js'
+            ],
             refresh: true,
         }),
     ],

@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Dashboard\HomeDashboardController;
 use App\Http\Controllers\PostDashboardController;
+use App\Http\Controllers\Public\CategoryController;
 use App\Http\Controllers\Public\HomeController;
 use App\Http\Controllers\Public\PostController;
 use Illuminate\Support\Facades\Route;
@@ -44,6 +45,7 @@ Route::middleware('guest')->group(function () {
 
 
 Route::middleware('auth')->group(function () {
+    //----Resources----
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
     Route::prefix('dashboard')->name('dashboard.')->group(function () {
@@ -55,8 +57,6 @@ Route::middleware('auth')->group(function () {
             ->group(function () {
                 Route::get('/', 'index')->name('index');
 
-                Route::get('/{slug}', 'show')->name('show');
-
                 Route::get('/create', 'create')->name('create');
                 Route::post('/create', 'store')->name('store');
 
@@ -64,6 +64,23 @@ Route::middleware('auth')->group(function () {
                 Route::put('/edit/{slug}', 'update')->name('update');
 
                 Route::delete('/destroy/{post}', 'destroy')->name('destroy');
-            });
+        });
+
+    });
+
+
+    //---AJAX---
+    /**
+     *  endpoint example
+     *  category
+     *  list -> BASE_URL/categories  | return data {[][][][][][][]}
+     *  detail -> BASE_URL/categories/id  | return data {}
+     *
+     *
+     */
+    Route::controller(CategoryController::class)
+        ->prefix('categories')
+        ->group(function() {
+            Route::get('/', 'list');
     });
 });

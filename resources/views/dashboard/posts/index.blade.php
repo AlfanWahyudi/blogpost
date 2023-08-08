@@ -1,18 +1,24 @@
 @extends('layouts.dashboard')
 
-@section('title', 'Home')
+@section('title', 'Posts')
 
 @section('content')
 <div class="mx-auto" style="max-width: 55rem;">
-    <h1 class="fw-medium fs-4">Posts</h1>
+    <h1 class="fw-medium fs-4 pt-3">Posts</h1>
     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-    <section class="hstack gap-3 pt-3">
+    <section class="hstack gap-3 py-4">
         <h2 class="visually-hidden">Filter Post</h2>
         <input type="search" name="" id="" class="form-control" placeholder="Search post">
         <button class="btn btn-primary rounded-pill">Date</button>
         <button class="btn btn-primary rounded-pill">Category</button>
     </section>
-    <section class="pt-3">
+    <div class="container-fluid alert alert-info alert-dismissible" role="alert">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quaerat eius suscipit qui labore ut!
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @if (session('success'))
+    @endif
+    <section>
         <h2 class="visually-hidden">Posts List</h2>
         @forelse ($posts as $post)
             <article class="card mb-3">

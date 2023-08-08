@@ -63,4 +63,10 @@ class CategoryController extends Controller
     {
         //
     }
+
+    public function list()
+    {
+        $categories = Category::all();
+        return $categories;
+    }
 }
