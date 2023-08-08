@@ -14,7 +14,7 @@
                     value="{{ old('name') }}"
                     placeholder="Enter your full name" required>
                 @error('name')
-                    <div id="name" class="invalid-feedback">{{ $message }}</div>
+                    <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
             <div class="mb-3">
@@ -24,7 +24,7 @@
                     value="{{ old('email') }}"
                     placeholder="Enter your email" required>
                 @error('email')
-                    <div id="email" class="invalid-feedback">{{ $message }}</div>
+                    <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
             <div class="mb-3">
@@ -33,7 +33,7 @@
                     class="form-control form-control-lg fs-6 @error('password') is-invalid @enderror"
                     placeholder="·········" minlength="8" required>
                 @error('password')
-                    <div id="password" class="invalid-feedback">{{ $message }}</div>
+                    <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
             <div class="mb-4">
