@@ -12,11 +12,11 @@
         <button class="btn btn-primary rounded-pill">Date</button>
         <button class="btn btn-primary rounded-pill">Category</button>
     </section>
-    <div class="container-fluid alert alert-info alert-dismissible" role="alert">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quaerat eius suscipit qui labore ut!
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
     @if (session('success'))
+        <div class="container-fluid alert alert-info alert-dismissible" role="alert">
+            {{ $message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
     @endif
     <section>
         <h2 class="visually-hidden">Posts List</h2>
@@ -46,7 +46,7 @@
                         </div>
                     </div>
                     <ul class="list-unstyled hstack gap-3 m-0">
-                        <li>{{ $post->updated_at == null ? '-' : $post->likes }}</li>
+                        <li>{{ $post->updated_at != null ? Carbon::parse($post->updated_at)->format('d M') : "-" }}</li>
                         <li>{{ $post->category->name }}</li>
                         <li>{{ $post->likes == null ? '0' : $post->likes }} likes</li>
                     </ul>

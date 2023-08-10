@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -26,6 +27,10 @@ class PostSeeder extends Seeder
                 'likes' => 10,
                 'read_time_minutes' => 3,
                 'content' => '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ex distinctio explicabo mollitia recusandae nemo beatae totam neque odit corporis consectetur similique rem ratione, magnam, amet eos illum vero eveniet ut deserunt in quis veritatis quae! Quo cumque sed deserunt. Aut, laborum ex aliquam nam rerum at iusto doloribus explicabo.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam excepturi tempore et aspernatur, delectus reiciendis quis vero commodi doloribus quos blanditiis nemo cupiditate explicabo perspiciatis, repudiandae veniam itaque praesentium mollitia molestiae odio pariatur eos atque. Accusantium corporis eligendi dicta maiores. Aliquam, quis! Reiciendis ex, quod distinctio ea esse nihil itaque.Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam excepturi tempore et aspernatur, delectus reiciendis quis vero commodi doloribus quos blanditiis nemo cupiditate explicabo perspiciatis, repudiandae veniam itaque praesentium mollitia molestiae odio pariatur eos atque. Accusantium corporis eligendi dicta maiores. Aliquam, quis! Reiciendis ex, quod distinctio ea esse nihil itaque.</p>',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'published' => 0,
+                'published_at' => null,
             ],
             [
                 'user_id' => 3,
@@ -36,6 +41,10 @@ class PostSeeder extends Seeder
                 'likes' => 30,
                 'read_time_minutes' => 6,
                 'content' => '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ex distinctio explicabo mollitia recusandae nemo beatae totam neque odit corporis consectetur similique rem ratione, magnam, amet eos illum vero eveniet ut deserunt in quis veritatis quae! Quo cumque sed deserunt. Aut, laborum ex aliquam nam rerum at iusto doloribus explicabo.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam excepturi tempore et aspernatur, delectus reiciendis quis vero commodi doloribus quos blanditiis nemo cupiditate explicabo perspiciatis, repudiandae veniam itaque praesentium mollitia molestiae odio pariatur eos atque. Accusantium corporis eligendi dicta maiores. Aliquam, quis! Reiciendis ex, quod distinctio ea esse nihil itaque.Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam excepturi tempore et aspernatur, delectus reiciendis quis vero commodi doloribus quos blanditiis nemo cupiditate explicabo perspiciatis, repudiandae veniam itaque praesentium mollitia molestiae odio pariatur eos atque. Accusantium corporis eligendi dicta maiores. Aliquam, quis! Reiciendis ex, quod distinctio ea esse nihil itaque.</p>',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'published' => 0,
+                'published_at' => null,
             ],
         ]);
 
@@ -49,6 +58,10 @@ class PostSeeder extends Seeder
                 'read_time_minutes' => 7,
                 'excerpt' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis consequatur dolores molestiae rem, amet ratione.',
                 'content' => '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ex distinctio explicabo mollitia recusandae nemo beatae totam neque odit corporis consectetur similique rem ratione, magnam, amet eos illum vero eveniet ut deserunt in quis veritatis quae! Quo cumque sed deserunt. Aut, laborum ex aliquam nam rerum at iusto doloribus explicabo.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam excepturi tempore et aspernatur, delectus reiciendis quis vero commodi doloribus quos blanditiis nemo cupiditate explicabo perspiciatis, repudiandae veniam itaque praesentium mollitia molestiae odio pariatur eos atque. Accusantium corporis eligendi dicta maiores. Aliquam, quis! Reiciendis ex, quod distinctio ea esse nihil itaque.Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam excepturi tempore et aspernatur, delectus reiciendis quis vero commodi doloribus quos blanditiis nemo cupiditate explicabo perspiciatis, repudiandae veniam itaque praesentium mollitia molestiae odio pariatur eos atque. Accusantium corporis eligendi dicta maiores. Aliquam, quis! Reiciendis ex, quod distinctio ea esse nihil itaque.</p>',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'published' => 1,
+                'published_at' => Carbon::now(),
             ],
             [
                 'user_id' => 2,
@@ -58,6 +71,10 @@ class PostSeeder extends Seeder
                 'read_time_minutes' => 5,
                 'excerpt' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis consequatur dolores molestiae rem, amet ratione.',
                 'content' => '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ex distinctio explicabo mollitia recusandae nemo beatae totam neque odit corporis consectetur similique rem ratione, magnam, amet eos illum vero eveniet ut deserunt in quis veritatis quae! Quo cumque sed deserunt. Aut, laborum ex aliquam nam rerum at iusto doloribus explicabo.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam excepturi tempore et aspernatur, delectus reiciendis quis vero commodi doloribus quos blanditiis nemo cupiditate explicabo perspiciatis, repudiandae veniam itaque praesentium mollitia molestiae odio pariatur eos atque. Accusantium corporis eligendi dicta maiores. Aliquam, quis! Reiciendis ex, quod distinctio ea esse nihil itaque.Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam excepturi tempore et aspernatur, delectus reiciendis quis vero commodi doloribus quos blanditiis nemo cupiditate explicabo perspiciatis, repudiandae veniam itaque praesentium mollitia molestiae odio pariatur eos atque. Accusantium corporis eligendi dicta maiores. Aliquam, quis! Reiciendis ex, quod distinctio ea esse nihil itaque.</p>',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'published' => 1,
+                'published_at' => Carbon::now(),
             ],
             [
                 'user_id' => 2,
@@ -67,6 +84,10 @@ class PostSeeder extends Seeder
                 'read_time_minutes' => 8,
                 'excerpt' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis consequatur dolores molestiae rem, amet ratione.',
                 'content' => '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ex distinctio explicabo mollitia recusandae nemo beatae totam neque odit corporis consectetur similique rem ratione, magnam, amet eos illum vero eveniet ut deserunt in quis veritatis quae! Quo cumque sed deserunt. Aut, laborum ex aliquam nam rerum at iusto doloribus explicabo.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam excepturi tempore et aspernatur, delectus reiciendis quis vero commodi doloribus quos blanditiis nemo cupiditate explicabo perspiciatis, repudiandae veniam itaque praesentium mollitia molestiae odio pariatur eos atque. Accusantium corporis eligendi dicta maiores. Aliquam, quis! Reiciendis ex, quod distinctio ea esse nihil itaque.Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam excepturi tempore et aspernatur, delectus reiciendis quis vero commodi doloribus quos blanditiis nemo cupiditate explicabo perspiciatis, repudiandae veniam itaque praesentium mollitia molestiae odio pariatur eos atque. Accusantium corporis eligendi dicta maiores. Aliquam, quis! Reiciendis ex, quod distinctio ea esse nihil itaque.</p>',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'published' => 1,
+                'published_at' => Carbon::now(),
             ],
         ]);
     }

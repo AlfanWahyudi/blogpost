@@ -1,3 +1,7 @@
+@php
+    use Carbon\Carbon;
+@endphp
+
 @extends('layouts.main')
 
 @section('title', 'Home')
@@ -24,8 +28,10 @@
                                 <p>{{ $post->excerpt }}</p>
                             </div>
                             <p class="m-0">
-                                <span class="fw-light">20 June, No Data For This</span>
-                                <span class="fw-light ms-3">10 mins read No Data For This</span>
+                                <span class="fw-light">{{ $post->updated_at != null ? Carbon::parse($post->updated_at)->format('d M') : "-" }}</span>
+                                @if($post->read_time_minutes != null)
+                                    <span class="fw-light ms-2">{{ $post->read_time_minutes }} mins read</span>
+                                @endif
                                 <a href="#"
                                     class="badge text-bg-primary text-decoration-none fs-6 ms-3">{{ $post->category->name }}</a>
                             </p>
