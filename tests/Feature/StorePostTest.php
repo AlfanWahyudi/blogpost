@@ -6,11 +6,10 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
-class PostTest extends TestCase
+class StorePostTest extends TestCase
 {
 
     private $data = [
-        'user_id' => '2',
         'category_id' => '2',
         'title' => 'Test Title',
         'slug' => 'test-title',
@@ -76,7 +75,6 @@ class PostTest extends TestCase
     {
         $this->loginSuccess();
 
-        $this->data['user_id'] = '';
         $this->data['category_id'] = '';
         $this->data['title'] = '';
         $this->data['slug'] = '';
@@ -85,20 +83,7 @@ class PostTest extends TestCase
         $this->data['read_time_minutes'] = null;
 
         $response = $this->post(route('dashboard.post.store'), $this->data);
-        $response->assertInvalid(['user_id', 'category_id', 'title', 'slug', 'content', 'read_time_minutes']);
-    }
-
-    /**
-     * test validasi input user_id kosong
-     */
-    public function test_validation_input_user_id_empty(): void
-    {
-        $this->loginSuccess();
-
-        $this->data['user_id'] = '';
-
-        $response = $this->post(route('dashboard.post.store'), $this->data);
-        $response->assertInvalid(['user_id']);
+        $response->assertInvalid(['category_id', 'title', 'slug', 'content', 'read_time_minutes']);
     }
 
     /**
